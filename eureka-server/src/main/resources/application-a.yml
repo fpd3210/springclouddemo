@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eurekaB:1112/eureka
+  instance:
+    hostname: eurekaA
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+  server:
+    enable-self-preservation: true
+server:
+  port: 1111
