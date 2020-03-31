@@ -40,7 +40,7 @@ public class HelloController {
     public String hello1(){
         HttpURLConnection con = null;
         try {
-            URL url = new URL("http://localhost:1113/hello");
+            URL url = new URL("http://localhost:1116/hello");
             con = (HttpURLConnection) url.openConnection();
             if(con.getResponseCode()==200){
                 BufferedReader br =  new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -67,7 +67,7 @@ public class HelloController {
     @GetMapping("/hello2")
     public String hello2(){
         HttpURLConnection con = null;
-        List<ServiceInstance> instances = discoveryClient.getInstances("provider");
+        List<ServiceInstance> instances = discoveryClient.getInstances("eureka-provider");
         ServiceInstance serviceInstance = instances.get(0);
         String host = serviceInstance.getHost();
         int port = serviceInstance.getPort();
@@ -104,7 +104,7 @@ public class HelloController {
     @GetMapping("/hello3")
     public String hello3(){
         HttpURLConnection con = null;
-        List<ServiceInstance> instances = discoveryClient.getInstances("provider");
+        List<ServiceInstance> instances = discoveryClient.getInstances("eureka-provider");
         ServiceInstance serviceInstance = instances.get((count++)%instances.size());
         String host = serviceInstance.getHost();
         int port = serviceInstance.getPort();
@@ -146,7 +146,7 @@ public class HelloController {
     @GetMapping("/hello4")
     public String hello4(){
         HttpURLConnection con = null;
-        List<ServiceInstance> instances = discoveryClient.getInstances("provider");
+        List<ServiceInstance> instances = discoveryClient.getInstances("eureka-provider");
         ServiceInstance serviceInstance = instances.get(0);
         String host = serviceInstance.getHost();
         int port = serviceInstance.getPort();
@@ -174,7 +174,7 @@ public class HelloController {
      */
     @GetMapping("/hello5")
     public String hello5(){
-        return restTemplate.getForObject("http://provider/hello",String.class);
+        return restTemplate.getForObject("http://eureka-provider/hello",String.class);
     }
 
 
@@ -188,10 +188,10 @@ public class HelloController {
      */
     @GetMapping("/hello6")
     public void hello6(){
-        String s = restTemplate.getForObject("http://provider/hello2?name={1}", String.class, "runn");
+        String s = restTemplate.getForObject("http://eureka-provider/hello2?name={1}", String.class, "runn");
         System.out.println(s);
 
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://provider/hello2?name={1}", String.class, "runn");
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://eureka-provider/hello2?name={1}", String.class, "runn");
         HttpStatus statusCode = responseEntity.getStatusCode();
         System.out.println("HttpStatus:"+statusCode);
         int statusCodeValue = responseEntity.getStatusCodeValue();
@@ -212,19 +212,19 @@ public class HelloController {
     @GetMapping("/hello7")
     public void hello7(){
         //占位符传值
-        String s1 = restTemplate.getForObject("http://provider/hello2?name={1}", String.class, "runn");
+        String s1 = restTemplate.getForObject("http://eureka-provider/hello2?name={1}", String.class, "runn");
         System.out.println(s1);
 
         //map传值
         Map<String ,Object> map = new HashMap<>();
         map.put("name","runn");
-        String s2 = restTemplate.getForObject("http://provider/hello2?name={name}", String.class, map);
+        String s2 = restTemplate.getForObject("http://eureka-provider/hello2?name={name}", String.class, map);
         System.out.println(s2);
 
         //uri传值
         try {
             //如果是中文需要转码，不然可能乱码
-            String url = "http://provider/hello2?name="+ URLEncoder.encode("张三","UTF-8");
+            String url = "http://eureka-provider/hello2?name="+ URLEncoder.encode("张三","UTF-8");
             URI uri = URI.create(url);
             String s3 = restTemplate.getForObject(uri, String.class);
             System.out.println(s3);
@@ -245,12 +245,12 @@ public class HelloController {
         map.add("username","runn");
         map.add("password","123");
         map.add("id",999);
-        User user1 = restTemplate.postForObject("http://provider/user1", map, User.class);
+        User user1 = restTemplate.postForObject("http://eureka-provider/user1", map, User.class);
         System.out.println(user1);
 
         //json传值
         user1.setId(998);
-        User user2 = restTemplate.postForObject("http://provider/user2", user1, User.class);
+        User user2 = restTemplate.postForObject("http://eureka-provider/user2", user1, User.class);
         System.out.println(user2);
     }
     /**
@@ -262,7 +262,7 @@ public class HelloController {
         map.add("username","runn");
         map.add("password","123");
         map.add("id",999);
-        URI uri = restTemplate.postForLocation("http://provider/register", map);
+        URI uri = restTemplate.postForLocation("http://eureka-provider/register", map);
         String s = restTemplate.getForObject(uri, String.class);
         System.out.println(s);
     }
@@ -276,13 +276,13 @@ public class HelloController {
         map.add("username","runn");
         map.add("password","123");
         map.add("id",999);
-        restTemplate.put("http://provider/user1",map);
+        restTemplate.put("http://eureka-provider/user1",map);
 
         User user = new User();
         user.setId(998);
         user.setPassword("123");
         user.setUsername("runn");
-        restTemplate.put("http://provider/user2",user);
+        restTemplate.put("http://eureka-provider/user2",user);
 
     }
 
@@ -291,8 +291,8 @@ public class HelloController {
      */
     @GetMapping("/hello11")
     public void hello11(){
-        restTemplate.delete("http://provider/user1?id={1}",998);
-        restTemplate.delete("http://provider/user2/{1}",999);
+        restTemplate.delete("http://eureka-provider/user1?id={1}",998);
+        restTemplate.delete("http://eureka-provider/user2/{1}",999);
     }
 
 }

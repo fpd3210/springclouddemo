@@ -3,7 +3,7 @@ spring:
     name: eureka-consumer
 
 server:
-  port: 1117
+  port: 1115
 
 eureka:
   client:

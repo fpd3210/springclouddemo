@@ -21,7 +21,7 @@ public class EurekaConsumerApplication {
      */
     @Bean
     RestTemplate restTemplateOne(){
-        return restTemplate();
+        return new RestTemplate();
     }
 
     /**
@@ -31,7 +31,7 @@ public class EurekaConsumerApplication {
     @Bean
     @LoadBalanced
     RestTemplate restTemplate(){
-        return restTemplate();
+        return new RestTemplate();
     }
 
 }

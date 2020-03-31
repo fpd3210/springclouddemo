@@ -14,9 +14,9 @@ public class RegisterController {
      * @param user
      * @return
      */
-    @PostMapping("register")
+    @PostMapping("/register")
     public String register(User user){
-        return "redirect:http://provider/loginPage?username="+user.getUsername();
+        return "redirect:http://eureka-provider/loginPage?username="+user.getUsername();
     }
 
     @GetMapping("/loginPage")
