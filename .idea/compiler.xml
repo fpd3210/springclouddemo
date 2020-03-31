@@ -9,6 +9,7 @@
         <module name="consul-provider" />
         <module name="commons" />
         <module name="eureka-consumer" />
+        <module name="hystrix" />
         <module name="eureka-server" />
         <module name="consul-consumer" />
         <module name="eureka-provider" />
@@ -22,6 +23,7 @@
       <module name="eureka-consumer" options="-parameters" />
       <module name="eureka-provider" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="hystrix" options="-parameters" />
     </option>
   </component>
 </project>
