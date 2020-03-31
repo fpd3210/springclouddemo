@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: consul-provider
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: consul-provider
+
+server:
+  port: 2222
+
+
