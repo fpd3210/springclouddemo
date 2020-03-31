@@ -21,6 +21,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.dpf</groupId>
+            <artifactId>hello-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.dpf.commons</groupId>
             <artifactId>commons</artifactId>
             <version>1.0-SNAPSHOT</version>

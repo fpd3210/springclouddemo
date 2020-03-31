@@ -1,5 +1,6 @@
 package com.dpf.eurekaprovider.controller;
 
+import com.dpf.api.IUserService;
 import com.dpf.commmons.pojo.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ import java.util.Date;
  * @email 446933040@qq.com
  */
 @RestController
-public class HelloController {
+public class HelloController implements IUserService {
 
     @Value("${server.port}")
     Integer port;
@@ -55,5 +56,10 @@ public class HelloController {
     @DeleteMapping("/user2/{id}")
     public void deleteUser2(@PathVariable Integer id){
         System.out.println(id);
+    }
+
+    @GetMapping("/user3")
+    public void getUserByName(@RequestHeader String name){
+        System.out.println(name);
     }
 }
