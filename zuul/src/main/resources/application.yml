@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: zuul
+server:
+  port: 2020
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+
+# \u4EE3\u7406:eureka-provider\u670D\u52A1\u4EE3\u7406\u5230/pikachues/**
+zuul:
+  routes:
+    pikachues:
+      path: /pikachues/**
+      service-id: eureka-provider
+#  ignored-services:  eureka-provider
+  ignored-services: "*"
+  prefix: /dpf
+
+# \u7B80\u5316\u914D\u7F6E
+#zuul:
+#  routes:
+#    eureka-provider: /pikachues/**
