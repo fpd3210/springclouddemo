@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="consul-provider" />
+        <module name="zuul" />
         <module name="commons" />
         <module name="eureka-consumer" />
         <module name="hystrix" />
@@ -27,6 +28,7 @@
       <module name="eureka-server" options="-parameters" />
       <module name="hystrix" options="-parameters" />
       <module name="openfeign" options="-parameters" />
+      <module name="zuul" options="-parameters" />
     </option>
   </component>
 </project>
