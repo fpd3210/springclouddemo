@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: opentfeign
+server:
+  port: 4000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+
+# \u65E5\u5FD7\u914D\u7F6E
+logging:
+  level:
+    com:
+      dpf:
+        openfeign:
+          service:
+            HelloService: debug
+# \u6570\u636E\u538B\u7F29\u914D\u7F6E
+feign:
+  compression:
+    request:
+      #\u5F00\u542F\u8BF7\u6C42\u538B\u7F29
+      enabled: true
+      # \u538B\u7F29\u7684\u6570\u636E\u7C7B\u578B
+      mime-types: text/html,application/json
+      # \u538B\u7F29\u6570\u636E\u7684\u4E0B\u9650\uFF0C2048\u8868\u793A\u5F53\u8981\u4F20\u8F93\u7684\u6570\u636E\u5927\u4E8E2048\u65F6\uFF0C\u624D\u4F1A\u8FDB\u884C\u6570\u636E\u8981\u9501
+      min-request-size: 2048
+    response:
+      # \u5F00\u542F\u54CD\u5E94\u538B\u7F29
+      enabled: true
+  # \u5F00\u542FHystrix
+  hystrix:
+    enabled: true
