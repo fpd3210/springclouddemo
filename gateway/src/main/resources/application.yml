@@ -1,0 +1,55 @@
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #\u5F00\u542F\u81EA\u52A8\u4EE3\u7406
+      routes:
+        - id: add_request_parameter_route
+#          uri: http://localhost:1116
+          uri: lb://eureka-provider # \u914D\u7F6E\u670D\u52A1\u8DEF\u7531\u8F6C\u53D1
+          filters:
+            - AddRequestParameter=name, pikachues
+          predicates:
+            - Method=get
+#        - id: remoteaddr_route
+#          uri: https://example.org
+#          predicates:
+#            - RemoteAddr=192.168.124.1/24
+#        - id: query_route
+#          uri: https://example.org
+#          predicates:
+#            - Query=name, p.*
+#        - id: path_route
+#          uri: https://www.csdn.net/
+#          predicates:
+#            - Path=/csdn/{s}
+#        - id: method_router
+#          uri: https://www.csdn.net/
+#          predicates:
+#            - Method=post
+#        - id: between_router
+#          uri: https://www.csdn.net/
+#          predicates:
+#            - Between=2020-01-20T06:06:06+08:00[Asia/Shanghai],2021-01-20T06:06:06+08:00[Asia/Shanghai]
+#        - id: time_router
+#            uri: https://www.csdn.net/
+#            predicates:
+#              - After=2020-01-20T06:06:06+08:00[Asia/Shanghai]
+#        - id: pikachues_router
+#          uri: http://httpbin.org
+#          predicates:
+#            - Path=/get
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

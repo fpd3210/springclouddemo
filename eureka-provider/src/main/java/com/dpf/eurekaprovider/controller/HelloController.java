@@ -62,4 +62,14 @@ public class HelloController implements IUserService {
     public void getUserByName(@RequestHeader String name){
         System.out.println(name);
     }
+
+    /**
+     * 测试AddRequestParameter GatewayFilter
+     * @param name
+     * @return
+     */
+    @GetMapping("/filter1")
+    public String filter1(String name){
+        return "hello "+name;
+    }
 }
