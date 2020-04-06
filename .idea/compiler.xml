@@ -9,6 +9,7 @@
         <module name="consul-provider" />
         <module name="zuul" />
         <module name="commons" />
+        <module name="configserver" />
         <module name="eureka-consumer" />
         <module name="hystrix" />
         <module name="eureka-server" />
@@ -16,12 +17,15 @@
         <module name="eureka-provider" />
         <module name="openfeign" />
         <module name="gateway" />
+        <module name="configclient" />
         <module name="hello-api" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="configclient" options="-parameters" />
+      <module name="configserver" options="-parameters" />
       <module name="consul-consumer" options="-parameters" />
       <module name="consul-provider" options="-parameters" />
       <module name="eureka-consumer" options="-parameters" />
