@@ -6,26 +6,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="consul-provider" />
-        <module name="zuul" />
-        <module name="commons" />
-        <module name="configserver" />
-        <module name="eureka-consumer" />
-        <module name="hystrix" />
-        <module name="eureka-server" />
-        <module name="consul-consumer" />
-        <module name="eureka-provider" />
-        <module name="openfeign" />
-        <module name="gateway" />
-        <module name="configclient" />
         <module name="hello-api" />
+        <module name="gateway" />
+        <module name="openfeign" />
+        <module name="zuul" />
+        <module name="hystrix" />
+        <module name="consul-provider" />
+        <module name="eureka-provider" />
+        <module name="eureka-server" />
+        <module name="configclient_bus" />
+        <module name="commons" />
+        <module name="eureka-consumer" />
+        <module name="configserver_bus" />
+        <module name="consul-consumer" />
+        <module name="configserver" />
+        <module name="configclient" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configclient" options="-parameters" />
+      <module name="configclient_bus" options="-parameters" />
       <module name="configserver" options="-parameters" />
+      <module name="configserver_bus" options="-parameters" />
       <module name="consul-consumer" options="-parameters" />
       <module name="consul-provider" options="-parameters" />
       <module name="eureka-consumer" options="-parameters" />

@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/configserver/pom.xml" />
         <option value="$PROJECT_DIR$/configclient/pom.xml" />
+        <option value="$PROJECT_DIR$/configserver_bus/pom.xml" />
+        <option value="$PROJECT_DIR$/configclient_bus/pom.xml" />
       </list>
     </option>
   </component>
