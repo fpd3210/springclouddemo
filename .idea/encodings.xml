@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/configclient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configclient/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configserver/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configserver/src/main/resources/application.yml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consul-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consul-provider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-consumer/src/main/java" charset="UTF-8" />

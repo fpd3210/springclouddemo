@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiaoxiaoshou/configRepoTest  # \u914D\u7F6E\u6587\u4EF6\u4ED3\u5E93\u5730\u5740
+          search-paths: client1 # \u4ED3\u5E93\u4E2D\u914D\u7F6E\u6587\u4EF6\u7684\u76EE\u5F55
+#          username: 446933040@qq.com
+#          password:
+          skipSslValidation: true  # \u8DF3\u8FC7ssl\u9A8C\u8BC1
+server:
+  port: 8081
+
