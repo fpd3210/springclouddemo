@@ -1,0 +1,13 @@
+# 秘钥
+encrypt:
+#  key: pikachues
+  key-store:
+    alias: config-server
+    location: config-server.keystore
+    password: 111111
+    secret: 111111
+spring:
+  security:
+    user:
+      name: admin
+      password: 123

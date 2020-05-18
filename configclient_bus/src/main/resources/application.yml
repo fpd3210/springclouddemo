@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: config-client-bus
+  cloud:
+    config:
+      # 开启快速响应(主要)
+      fail-fast: true
+      # 开启请求失败重试
+      retry:
+        # 请求重试的初始间隔时间
+        initial-interval: 1000
+        # 最大重试次数
+        max-attempts: 6
+        # 重试时间间隔
+        multiplier: 1.1
+        # 最大间隔时间
+        max-interval: 2000
+server:
+  port: 8082
+
+
+
+# 添加动态刷新节点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

@@ -1,0 +1,28 @@
+
+
+spring:
+  application:
+    name: config-server-bus
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiaoxiaoshou/configRepoTest  # 配置文件仓库地址
+          search-paths: client1 # 仓库中配置文件的目录
+          #          username: 446933040@qq.com
+          #          password:
+          skipSslValidation: true  # 跳过ssl验证
+  rabbitmq:
+    host: 122.51.115.148
+    username: guest
+    password: guest
+    port: 5672
+server:
+  port: 8081
+
+# 添加bus-refresh，用于提供刷新接口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

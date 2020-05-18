@@ -7,3 +7,8 @@ spring:
       uri: http://localhost:8081
       username: admin
       password: 123
+  rabbitmq:
+    username: guest
+    host: 122.51.115.148
+    password: guest
+    port: 5672
