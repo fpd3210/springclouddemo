@@ -4,6 +4,14 @@ spring:
       name: client1
       profile: dev
       label: master
-      uri: http://localhost:8081
+#      uri: http://localhost:8081
       username: admin
       password: 123
+      discovery:
+        enabled: true
+        service-id: config-server
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka

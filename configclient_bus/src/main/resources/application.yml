@@ -19,10 +19,10 @@ server:
   port: 8082
 
 
-
 # 添加动态刷新节点
 management:
   endpoints:
     web:
       exposure:
         include: refresh
+

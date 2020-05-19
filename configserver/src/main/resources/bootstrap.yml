@@ -2,8 +2,8 @@
 encrypt:
 #  key: pikachues
   key-store:
-    alias: config-server
-    location: config-server.keystore
+    alias: mytestkey
+    location: classpath:config-service.jks
     password: 111111
     secret: 111111
 spring:

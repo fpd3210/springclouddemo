@@ -17,6 +17,7 @@
         <module name="configclient_bus" />
         <module name="commons" />
         <module name="eureka-consumer" />
+        <module name="eureka-server_bus" />
         <module name="configserver_bus" />
         <module name="consul-consumer" />
         <module name="configserver" />
@@ -35,6 +36,7 @@
       <module name="eureka-consumer" options="-parameters" />
       <module name="eureka-provider" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="eureka-server_bus" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="hystrix" options="-parameters" />
       <module name="openfeign" options="-parameters" />

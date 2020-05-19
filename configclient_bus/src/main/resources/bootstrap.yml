@@ -4,11 +4,21 @@ spring:
       name: client1
       profile: dev
       label: master
-      uri: http://localhost:8081
+      # 直接写死破坏了微服务架构
+#      uri: http://localhost:8081
       username: admin
       password: 123
+      discovery:
+        # 开启通过eureka获取configserver功能
+        enabled: true
+        # 配置configserver服务名称
+        service-id: config-server-bus
   rabbitmq:
     username: guest
     host: 122.51.115.148
     password: guest
     port: 5672
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka

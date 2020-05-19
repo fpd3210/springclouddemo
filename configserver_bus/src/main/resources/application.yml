@@ -20,6 +20,12 @@ spring:
 server:
   port: 8081
 
+# 注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka
+
 # 添加bus-refresh，用于提供刷新接口
 management:
   endpoints:
