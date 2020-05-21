@@ -21,6 +21,7 @@
         <module name="commons" />
         <module name="hello-api" />
         <module name="eureka-server_bus" />
+        <module name="sleuthdemo" />
         <module name="configserver_bus" />
         <module name="stream-consumer" />
         <module name="consul-consumer" />
@@ -48,6 +49,7 @@
       <module name="gateway" options="-parameters" />
       <module name="hystrix" options="-parameters" />
       <module name="openfeign" options="-parameters" />
+      <module name="sleuthdemo" options="-parameters" />
       <module name="stream" options="-parameters" />
       <module name="stream-consumer" options="-parameters" />
       <module name="stream-provider" options="-parameters" />
