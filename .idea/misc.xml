@@ -27,6 +27,10 @@
         <option value="$PROJECT_DIR$/stream-provider/pom.xml" />
         <option value="$PROJECT_DIR$/stream-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/sleuthdemo/pom.xml" />
+        <option value="$PROJECT_DIR$/alibaba-provider1/pom.xml" />
+        <option value="$PROJECT_DIR$/alibaba-provider2/pom.xml" />
+        <option value="$PROJECT_DIR$/alibaba-consumer1/pom.xml" />
+        <option value="$PROJECT_DIR$/alibaba-config-nacos/pom.xml" />
       </list>
     </option>
   </component>
