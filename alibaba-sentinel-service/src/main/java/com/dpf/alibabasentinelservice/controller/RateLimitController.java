@@ -2,7 +2,6 @@ package com.dpf.alibabasentinelservice.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.alibaba.csp.sentinel.util.IdUtil;
 import com.dpf.alibabasentinelservice.exception.CustomerBlockHandler;
 import com.dpf.alibabasentinelservice.pojo.CommonResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,7 +42,6 @@ public class RateLimitController {
         return new CommonResult(200, "by url限流测试OK");
     }
     //CustomerBlockHandler
-
 
 
     @GetMapping("/rateLimit/customerBlockHandler")
