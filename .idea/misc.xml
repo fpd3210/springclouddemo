@@ -35,6 +35,9 @@
         <option value="$PROJECT_DIR$/alibaba-provider3/pom.xml" />
         <option value="$PROJECT_DIR$/alibaba-provider4/pom.xml" />
         <option value="$PROJECT_DIR$/alibaba-consumer2/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-order-service/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-storage-service/pom.xml" />
+        <option value="$PROJECT_DIR$/seata-account-service/pom.xml" />
       </list>
     </option>
   </component>
